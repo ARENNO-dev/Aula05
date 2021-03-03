@@ -3,15 +3,17 @@ import java.util.Scanner;
 
 public class TeacherHelper {
 
-	public static double horaAula=17.50;
+	//Vamos substutuir esta constante por uma variavel
+	//public static final double horaAula=17.50;
 	
 	public static void main(String[] args) {
 		int opcao=0, numeroAulas, qtdeAlunos, i;
-		double salarioBase, horaAtividade, descansoSemanalRemunerado, salario, notaAluno, mediaAlunos;
+		double salarioBase, horaAtividade, descansoSemanalRemunerado, salario, notaAluno, mediaAlunos, horaAula;
 		
 		Random gerador = new Random();
 		
 		Scanner leitor = new Scanner(System.in);
+		
 		
 		while(opcao!=4) {
 			System.out.println("FERRAMENTA DE AUXÍLIO AO PROFESSOR!");
@@ -19,6 +21,7 @@ public class TeacherHelper {
 			System.out.println("1 - Calcular salário");
 			System.out.println("2 - Calcular média de notas dos alunos");
 			System.out.println("3 - Exibir a motivação do dia!");
+			//System.out.println("4 - Sair");
 			opcao = leitor.nextInt();
 			
 			switch (opcao) {
@@ -28,6 +31,8 @@ public class TeacherHelper {
 				 * http://www1.sinprosp.org.br/guia_consultas.asp?mat=8*/
 				System.out.println("Para calcular seu salário base precisamos saber quantas aulas semanais o professor tem na instituição");
 				numeroAulas = leitor.nextInt();
+				System.out.println("Informe também o valor da hora aula praticada na instituição");
+				horaAula = leitor.nextDouble();
 				salarioBase = numeroAulas * 4.5 * horaAula;
 				horaAtividade = salarioBase * 0.05;
 				descansoSemanalRemunerado = (salarioBase + horaAtividade) / 6;
